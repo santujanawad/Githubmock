@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="github.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="tags.js"></script>
+<meta charset="utf-8">
+<title>Creating Fixed Header and Footer with CSS</title>
+
+</head>
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="#" >Git Hub Issue Mock</a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+            <div class="well well-lg">github/hub 
+                    <ul style="
+                    margin-top: 12px;
+                ">
+                            <li><a href="#home">Code</a></li>
+                            <li><a href="#news">Issues</a></li>
+                            <li><a href="#contact">Full Requests</a></li>
+                            <li><a href="#about">Actions</a></li>
+                            <li><a href="#about">Projects</a></li>
+                            <li><a href="#about">Security</a></li>
+                            <li><a href="#about">Insites</a></li>
+                          </ul>
+            </div>  
+
+    </div> 
+    <div class="container" style="position: fixed;top: 180px;;">
+    <div class="row">
+        <div class="col-sm-6" class="tag-container"><input class="form-control" id="myInput" id="testInput" id="myInput1" type="text" placeholder="Search.."></div>
+        <div class="col-sm-2"><button type="button" >Labels <span class="badge">8</span></button></div>    
+        <div class="col-sm-2"><button type="button" >Milestone <span class="badge">0</span></button></div>    
+        <div class="col-sm-2"> <button type="button" class="btn btn-success">New Issue</button></div>  
+        
+    </div>
+  
+  <br>
+  <ul class="list-group" id="myList" style="width: 1068px;" id="myInput1">
+        <div class="border">
+                <div class="container">
+                        <div class="dropdown" style="position: relative;right: -50%;">
+                          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Labels
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu" id="myList1" >
+                            <input class="form-control" id="myInput1"  type="text" placeholder="Search..">
+                            <li ><a href="#">feature</a></li>
+                            <li><a href="#">bug</a></li>
+                            <li><a href="#">config</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">docs</a></li>
+                          </ul>
+                        </div>
+                      </div>
+        </div>
+        
+    <li class="list-group-item">First item <span class="label label-success">feature</span></li>
+    <li class="list-group-item">Second item <span class="label label-warning">bug</span></li>
+    <li class="list-group-item">Third item <span class="label label-info">Config</span></li>
+    <li class="list-group-item">Fourth <span class="label label-primary">docs</span></li>
+  </ul>  
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(document).ready(function(){
+  $("#myInput1").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList1 li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(function() {
+				$("#testInput").tags({
+					unique: true,
+					maxTags: 5
+				});
+			});
+</script>
+   
+    
+       
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; git hub Issue</div>        
+    </div>
+</div>
+
+
+</body>
+</html>
